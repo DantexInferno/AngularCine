@@ -27,5 +27,5 @@
       <input type="checkbox" (click)="isActive1()" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Mayor de edad</label>
     </div>
-    <button type="submit" [disabled]="!isActive" class="btn btn-primary">Comprar</button>
+    <button type="submit" [routerLink]="['/home']" [disabled]="!isActive" class="btn btn-primary">Comprar</button>
   </form>
