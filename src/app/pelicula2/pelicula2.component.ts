@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-pelicula2',
@@ -9,26 +9,53 @@ export class Pelicula2Component implements OnInit {
 
   constructor() { }
 
-  lugar:string="0";
-  precio:string = "0";
-  select:string[]=["CineColombia","CineMark","RoyalFilms"];
-
+  lugar:string="";
+  precio:any = "0";
+  selected:string[]=["CineColombia","CineMark","RoyalFilms"];
+  cantidad:number=0;
+  total1:number=0;
+  isActive:boolean=false;
   ngOnInit() {
-    for (let index = 0; index < this.select.length; index++) {
-      this.lugar=this.select[index];
-      if (this.lugar=="CineColombia") {
-          this.precio="9000";
-        console.log("Wwwwwwwwwwwwwww");
-        
-      }
-      if (this.lugar=="CineMark") {
-         this.precio="7000";
-      } if (this.lugar=="RoyalFilms") {
-         this.precio="6000";
-      } 
+    
       
     }
+
+    
+onchance(event:any){
+  this.lugar=event.target.value;
+  
+  if (this.lugar=="CineColombia") {
+    this.precio="9000";
+    console.log(this.precio);
+    
   }
+
+  if (this.lugar=="CineMark") {
+    this.precio="7000";
+    console.log(this.precio);
+    
+  }
+
+  if (this.lugar=="RoyalFilms") {
+    this.precio="6000";
+    console.log(this.precio);
+    
+  }
+}
+
+totalTiquete(event:any){
+  this.cantidad=event.target.value;
+  this.total1=event.target.value;
+
+
+  if (this.cantidad!=null) {
+   this.total1=this.precio*this.cantidad;
+  }
+}
+
+isActive1(){
+  this.isActive=!this.isActive;
+}
 
 img1="./assets/img/it2.jpg"
 
